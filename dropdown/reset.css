@@ -1,0 +1,55 @@
+
+html,body{
+	font: 400 20px Microsoft Yahei,'微软雅黑',Helvetica,Arial,sans-serif;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, code,
+form, fieldset, legend, input, button,
+textarea, p, blockquote,span,samp {
+    margin: 0;
+    padding: 0;
+	word-break:break-all;
+}
+fieldset, img {
+    border: 0;
+}
+img{width:100%;vertical-align: top;}
+a {
+    cursor: pointer;
+	text-decoration:none;
+	display:block;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+input, button, textarea,
+select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+ol, ul, li {
+    list-style: none;
+    list-style-image: none;
+    list-style-type: none;
+}
+i{
+    font-style: normal;
+    padding:0px;
+    margin:0px;
+}
+input,textarea,select{
+	outline:none;	
+}
+.gray-bg{
+	background:#f1f1f1;
+}
