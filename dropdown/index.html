@@ -26,7 +26,7 @@
     		border: 5px solid transparent;
     		border-top: 5px solid #8A9EBA;
     		position: absolute;
-    		top: 14.5px; /* select的高/2 - border/2  32/2 - 5/2*/
+    		top: 14.5px; /* select的高/2 - border/2  即 32/2 - 5/2*/
     		right: 10px;
 		}
 		.select.down:after{
@@ -36,63 +36,225 @@
     		border: 5px solid transparent;
     		border-bottom: 5px solid #8A9EBA;
     		position: absolute;
-    		top: 6px; /* select的高/2 - borde*2  32/2 - 5*2*/
+    		top: 8.5px; /* select的高/2 - borde*2 + border/2  即 32/2 - 5*2 + 5/2*/
     		right: 10px;
-		}
-		.menu li:hover{
-			background: #F8F9FD;
 		}
 		.menu{
 			color: #979797;
 			font-size: 12px; 
-			/*display: none;*/
+			border:1px solid #EAEAEA;
+			border-top: none;
+			width: 138px;
+			display: none;
+		}
+		.menu li{
+			height: 32px;
+			line-height: 32px;
+			text-indent: 10px;
+		}
+		.menu li:hover{
+			background: #F8F9FD;
 		}
 		.childmenu{
-			/*display: none;*/
+			border:1px solid #EAEAEA;
+			width: 138px;
+			display: none;
 		}
 	</style>
 </head>
 <body>
 
-	
-	<div class="dropbox">
+	<!-- <div class="dropbox">
 		<div class="select">近七天</div>
 		<ul class="menu">
-			<li>全部记录
-				<ul class="childmenu">
-					<li>下载简历</li>
-					<li>过期</li>
-					<li>被分配</li>
+			<li data-id="1">全部记录
+				<ul class="childmenu inner">
+					<li data-id="1-1">下载简历1</li>
+					<li data-id="1-2">过期1</li>
+					<li data-id="1-3">被分配1</li>
 				</ul>
 			</li>
-			<li>点数减少
-				<ul class="childmenu">
-					<li>下载简历</li>
-					<li>过期</li>
-					<li>被分配</li>
+			<li data-id="2">点数减少
+				<ul class="childmenu inner">
+					<li data-id="2-1">下载简历2</li>
+					<li data-id="2-2">过期2</li>
+					<li data-id="2-3">被分配2</li>
 				</ul>								
 			</li>
-			<li>点数增加
-				<ul class="childmenu">
-					<li>下载简历</li>
-					<li>过期</li>
-					<li>被分配</li>
+			<li data-id="3">点数增加
+				<ul class="childmenu inner">
+					<li data-id="3-1">下载简历3</li>
+					<li data-id="3-2">过期3</li>
+					<li data-id="3-3">被分配3</li>
 				</ul>
 			</li>
 		</ul>
+	</div> -->
+
+	<!-- <div class="dropbox">
+		<div class="select">近七天</div>
+		<ul class="menu">
+			<li data-id="1">全部记录
+				<ul class="childmenu">
+					<li data-id="1-1">下载简历1
+						<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul>
+					</li>
+					<li data-id="1-2">过期1
+						<ul class="childmenu inner">
+							<li data-id="1-2-1">下载简历1-2-1</li>
+							<li data-id="1-2-2">过期1-2-2</li>
+							<li data-id="1-2-3">被分配1-2-3</li>
+						</ul>
+					</li>
+					<li data-id="1-3">被分配1
+						<ul class="childmenu inner">
+							<li data-id="1-3-1">下载简历1-3-1</li>
+							<li data-id="1-3-2">过期1-3-2</li>
+							<li data-id="1-3-3">被分配1-3-3</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li data-id="2">点数减少
+				<ul class="childmenu">
+					<li data-id="2-1">下载简历2
+						<ul class="childmenu inner">
+							<li data-id="2-1-1">下载简历2-1-1</li>
+							<li data-id="2-1-2">过期2-1-2</li>
+							<li data-id="2-1-3">被分配2-1-3</li>
+						</ul>
+					</li>
+					<li data-id="2-2">过期2
+						<ul class="childmenu inner">
+							<li data-id="2-2-1">下载简历2-2-1</li>
+							<li data-id="2-2-2">过期2-2-2</li>
+							<li data-id="2-2-3">被分配2-2-3</li>
+						</ul>
+					</li>
+					<li data-id="2-3">被分配2
+						<ul class="childmenu inner">
+							<li data-id="2-3-1">下载简历2-3-1</li>
+							<li data-id="2-3-2">过期2-3-2</li>
+							<li data-id="2-3-3">被分配2-3-3</li>
+						</ul>
+					</li>
+				</ul>								
+			</li>
+			<li data-id="3">点数增加
+				<ul class="childmenu">
+					<li data-id="3-1">下载简历3
+						<ul class="childmenu inner">
+							<li data-id="3-1-1">下载简历3-1-1</li>
+							<li data-id="3-1-2">过期3-1-2</li>
+							<li data-id="3-1-3">被分配3-1-3</li>
+						</ul>
+					</li>
+					<li data-id="3-2">过期3
+						<ul class="childmenu inner">
+							<li data-id="3-2-1">下载简历3-2-1</li>
+							<li data-id="3-2-2">过期3-2-2</li>
+							<li data-id="3-2-3">被分配3-2-3</li>
+						</ul>
+					</li>
+					<li data-id="3-3">被分配3
+						<ul class="childmenu inner">
+							<li data-id="3-3-1">下载简历3-3-1</li>
+							<li data-id="3-3-2">过期3-3-2</li>
+							<li data-id="3-3-3">被分配3-3-3</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div> -->
+
+	<div class="dropbox">
+		<div class="select">近七天</div>
+		<ul class="menu">
+			<li data-id="1">全部记录
+				<ul class="childmenu">
+					<li data-id="1-1">下载简历1
+						<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1
+								<ul class="childmenu inner">
+									<li data-id="1-1-1">下载简历1-1-1</li>
+									<li data-id="1-1-2">过期1-1-2</li>
+									<li data-id="1-1-3">被分配1-1-3</li>
+								</ul>
+							</li>
+							<li data-id="1-1-2">过期1-1-2<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+							<li data-id="1-1-3">被分配1-1-3<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+						</ul>
+					</li>
+					<li data-id="1-2">过期1
+						<ul class="childmenu inner">
+							<li data-id="1-2-1">下载简历1-2-1<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+							<li data-id="1-2-2">过期1-2-2<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+							<li data-id="1-2-3">被分配1-2-3<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+						</ul>
+					</li>
+					<li data-id="1-3">被分配1
+						<ul class="childmenu inner">
+							<li data-id="1-3-1">下载简历1-3-1<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+							<li data-id="1-3-2">过期1-3-2<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+							<li data-id="1-3-3">被分配1-3-3<ul class="childmenu inner">
+							<li data-id="1-1-1">下载简历1-1-1</li>
+							<li data-id="1-1-2">过期1-1-2</li>
+							<li data-id="1-1-3">被分配1-1-3</li>
+						</ul></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			
+		</ul>
 	</div>
+
 	
 	<script src="jquery-3.1.1.js"></script>
 	<script src="drop.js"></script>
 	<script>
 
 		new Drop({
-			level : 2 ,
+			level : 4 ,
 			dom : $(".select"),
 			fisrtlist : $(".menu"),
 			childlists : $(".childmenu"),
-			firstCallback : "",
-			secondCallback : ""
+			innerlist : $(".inner"),
+			dataId : "data-id",
+			selectCallback : null,
 		});
 
 	</script>
