@@ -48,27 +48,26 @@
 			
 			var origin = that.config.data;
 
-			var html = "<ul class='menu'>";
-			// var li = "";
-			
-			//数据渲染
-			for( var i = 0; i<origin.length; i++){
-				// createLi( origin[i] );
-				html += "<li data-id='"+ origin[i].id +"'>" + origin[i].text +"<div></div><li>";
+			var html = "";
+
+			function createLi( origin ){
+				html += "<ul class='menu'>";
+
+				for( var i = 0; i<origin.length; i++){
+
+					html += "<li data-id='"+ origin[i].id +"'>" + origin[i].text;
+					if( origin[i].childList ){
+						createLi( origin[i].childList );
+					}
+					html += "</li>"
+				}
+
+				html += "</ul>";
 			}
 
-			html += "</ul>";
+			createLi(origin);
 
-			/*function createLi( item ){
-				li += "<li data-id='"+ item.id +"'>";
-				if( Arrary.isArrary( item.childList ) ){
-					for( var i = 0; i < item.childList.length; i++){
-						createLi( item.childList );
-					}
-				}
-				li += item.text +"<li>";
-				return li;
-			}*/
+			$('.dropbox').append( html );
 				
 			// 设置一级列表样式
 			that.config.fisrtlist.hide();

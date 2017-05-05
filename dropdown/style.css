@@ -38,7 +38,8 @@
 	border:1px solid #EAEAEA;
 	border-top: none;
 	width: 138px;
-	display: none;
+	position: absolute;
+	/*display: none;*/
 }
 .menu li{
 	height: 32px;
@@ -51,5 +52,5 @@
 .childmenu{
 	border:1px solid #EAEAEA;
 	width: 138px;
-	display: none;
+	/*display: none;*/
 }
