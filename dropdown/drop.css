@@ -1,0 +1,55 @@
+.dropbox , .dropbox1{
+	position: relative;
+	margin:100px;
+}
+.select , .select1{
+	border:1px solid #EAEAEA;
+	width: 138px;
+	height: 32px;
+	line-height: 32px;
+	text-indent: 10px;
+	color: #979797;
+	font-size: 12px; 
+	position: relative;
+}
+.select:after , .select1:after{
+	content:"";
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top: 5px solid #8A9EBA;
+	position: absolute;
+	top: 14.5px; /* select的高/2 - border/2  即 32/2 - 5/2*/
+	right: 10px;
+}
+.select.down:after , .select1.down:after{
+	content:"";
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-bottom: 5px solid #8A9EBA;
+	position: absolute;
+	top: 8.5px; /* select的高/2 - borde*2 + border/2  即 32/2 - 5*2 + 5/2*/
+	right: 10px;
+}
+.menu , .menu1{
+	color: #979797;
+	font-size: 12px; 
+	border:1px solid #EAEAEA;
+	border-top: none;
+	width: 138px;
+	display: none;
+}
+.menu li , .menu1 li{
+	height: 32px;
+	line-height: 32px;
+	text-indent: 10px;
+}
+.menu li:hover , .menu1 li:hover{
+	background: #F8F9FD;
+}
+.childmenu , .childmenu1{
+	border:1px solid #EAEAEA;
+	width: 138px;
+	display: none;
+}
