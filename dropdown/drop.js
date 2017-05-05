@@ -50,8 +50,15 @@
 
 			var html = "";
 
+			var flag = 0;
+
 			function createLi( origin ){
-				html += "<ul class='menu'>";
+				if( flag == 0 ){
+					html += "<ul class='menu'>";
+					flag += 1;
+				}else{
+					html += "<ul class='childmenu'>";
+				}
 
 				for( var i = 0; i<origin.length; i++){
 
@@ -66,19 +73,12 @@
 			}
 
 			createLi(origin);
-
 			$('.dropbox').append( html );
 				
 			// 设置一级列表样式
-			that.config.fisrtlist.hide();
+			// that.config.fisrtlist.hide();
+			$(".menu , .childmenu").hide();
 
-			// 设置后续多级列表样式
-			for(var i =0; i< c_lists.length; i++){
-				c_lists.eq(i).css({
-					"position" : "absolute"
-				});
-				c_lists.eq(i).hide();
-			};
 		},
 		showSelect : function(){
 			var that = this;
@@ -88,11 +88,7 @@
 				}else{
 					$(this).addClass("down")
 				}
-				that.config.fisrtlist.css({
-					"position":"absolute",
-					"top" : that.config.dom.height() + parseInt(that.config.dom.css("border-bottom-width")),
-					"left" : "0"
-				}).toggle();
+				$(".menu").toggle();
 			});
 		},
 		hoverList : function(){
@@ -107,7 +103,11 @@
 			that.config.childlists.find("li").not( that.config.innerlist ).each(function(index , item){
 				hoverLiList.push(item);
 			});
-
+			$(".menu").on("mouseover" , "li" , function(){
+				console.log($(this).parent().find(".childmenu"));
+				$(this).parent().find(".childmenu").hide();
+				$(this).show();
+			})
 			$.each(hoverLiList , function(index ,item){
 				/*$('.menu').on('hover','li',function(){
 					this.
@@ -116,16 +116,6 @@
 					$(item).parent().find(that.config.childlists).each(function( idx , i){
 						$(i).hide();
 					});
-
-					var parentlist = $(item).parent();
-
-					var left = $(item).width() + parseFloat( parentlist.css("border-right-width"));
-					var top = 0 - parseFloat( that.config.dom.css("border-top-width"));
-
-					$(item).children( that.config.childlists ).eq(0).css({
-						"top" : top ,
-						"left" : left
-					}).show();
 					return false;
 				})
 			});

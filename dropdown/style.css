@@ -39,10 +39,13 @@
 	border-top: none;
 	width: 138px;
 	position: absolute;
+	top: 33px;
+	left: 0;
 	/*display: none;*/
 }
 .menu li{
 	height: 32px;
+	width: 138px;
 	line-height: 32px;
 	text-indent: 10px;
 }
@@ -52,5 +55,8 @@
 .childmenu{
 	border:1px solid #EAEAEA;
 	width: 138px;
+	position: absolute;
+	top:-1px;
+	left: 139px;
 	/*display: none;*/
 }
