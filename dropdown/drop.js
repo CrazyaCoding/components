@@ -104,9 +104,9 @@
 				hoverLiList.push(item);
 			});
 			$(".menu").on("mouseover" , "li" , function(){
-				console.log($(this).parent().find(".childmenu"));
 				$(this).parent().find(".childmenu").hide();
-				$(this).show();
+				debugger;
+				$(this).children("ul").show();
 			})
 			$.each(hoverLiList , function(index ,item){
 				/*$('.menu').on('hover','li',function(){
