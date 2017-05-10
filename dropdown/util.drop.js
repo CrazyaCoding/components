@@ -4,28 +4,25 @@
 	<link rel="stylesheet" href="//c.58cdn.com.cn/ui7/job/hire/reset_v20170117194024.css">
 	<link rel="stylesheet" href="//j1.58cdn.com.cn/n/css/drop.css">
 	样式根据需要自己拿取
+
+
+	new Drop({
+		dom : $(".select"),
+		selectCallback : function(dataid){},
+		data : data
+	});
+
 	var data = [
 		{id : 0 , text : "test1" , childList :[
-		 	{ id : 01 , text : "test11"},
-		 	{ id : 02 , text : "test12"},
-		 	{ id : 03 , text : "test13"} 
-		 	]
-		},
-		{ id : 1 , text : "test2" ,  childList :[
-		 	{ id : 11 , text : "test21"},
-		 	{ id : 12 , text : "test22"},
-		 	{ id : 13 , text : "test23"}
-		 	] 
-		},
-		{ id : 2 , text : "test3" ,  childList :[
-		 	{ id : 21 , text : "test31"},
-		 	{ id : 22 , text : "test32"},
-		 	{ id : 23 , text : "test33"} 
+		 		{ id : 01 , text : "test11", childList : [
+			 		{ id : 231 , text : "过期231" }
+			 	]},
 		 	]
 		}
 	]
- */
-	(function(window){
+
+*/
+define([/*"依赖模块1", "依赖模块2",...*/], function(/*var_dep1, var_dep2,...*/) {
 	/**
 	 * [initial description]
 	 * @type {Object}
@@ -59,7 +56,6 @@
 			// select
 			this.select();
 		},
-
 		/**
 		 * [render description]
 		 * @return {[type]} [加载数据 渲染下拉框]
@@ -137,7 +133,6 @@
 				$(".menu").hide();
 				$(".childmenu").hide();
 			})
-
 		},
 		/**
 		 * [select 点击事件]
@@ -157,6 +152,5 @@
 			});
 		}
 	}
-	window.Drop = Drop;
 
-})(window)
+});

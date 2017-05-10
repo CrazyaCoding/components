@@ -1,8 +1,8 @@
-.dropbox , .dropbox1{
+.dropbox{
 	position: relative;
 	margin:100px;
 }
-.select , .select1{
+.select{
 	border:1px solid #EAEAEA;
 	width: 138px;
 	height: 32px;
@@ -12,7 +12,7 @@
 	font-size: 12px; 
 	position: relative;
 }
-.select:after , .select1:after{
+.select:after{
 	content:"";
 	width: 0;
 	height: 0;
@@ -22,7 +22,7 @@
 	top: 14.5px; /* select的高/2 - border/2  即 32/2 - 5/2*/
 	right: 10px;
 }
-.select.down:after , .select1.down:after{
+.select.down:after{
 	content:"";
 	width: 0;
 	height: 0;
@@ -32,24 +32,29 @@
 	top: 8.5px; /* select的高/2 - borde*2 + border/2  即 32/2 - 5*2 + 5/2*/
 	right: 10px;
 }
-.menu , .menu1{
+.menu{
 	color: #979797;
 	font-size: 12px; 
 	border:1px solid #EAEAEA;
-	border-top: none;
+	border-top: 1px solid transparent;
 	width: 138px;
-	display: none;
+	position: absolute;
+	top: 33px;
+	left: 0;
 }
-.menu li , .menu1 li{
+.menu li{
 	height: 32px;
+	width: 138px;
 	line-height: 32px;
 	text-indent: 10px;
 }
-.menu li:hover , .menu1 li:hover{
+.menu li:hover{
 	background: #F8F9FD;
 }
-.childmenu , .childmenu1{
+.childmenu{
 	border:1px solid #EAEAEA;
 	width: 138px;
-	display: none;
+	position: absolute;
+	top: -1px;
+	left: 139px;
 }
